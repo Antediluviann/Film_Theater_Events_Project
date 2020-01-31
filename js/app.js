@@ -65,12 +65,11 @@ var myFilms = [
   }
 ];
 
-//defining function for creating elements for each film
+// FUNCTION FOR CREATING AND APPENDING ELEMENTS. ALSO ADDING NAMES AND IMAGE PATH.
 
 function createFilms(data) {
 
   data.forEach(function(element) {
-    //creating elements
 
     var films = document.getElementById("films");
     var filmName = document.createElement("h3");
@@ -78,14 +77,11 @@ function createFilms(data) {
     var film = document.createElement("div");
     var deleteButton = document.createElement("span");
 
-    //appending elements
-
     films.appendChild(film);
     film.appendChild(filmName);
     film.appendChild(filmImg);
     film.appendChild(deleteButton);
 
-    //Adding names and image paths
     film.classList.add("film");
     filmName.innerHTML = element.name;
     filmImg.setAttribute("src", element.imgSrc);
@@ -93,22 +89,18 @@ function createFilms(data) {
   });
 }
 
-//difining function for filtering films
+// FUNCTION FOR FILTERING AND REMOVING FILMS THAT DO NOT MATCH THE SEARCH INPUT DATA.
 
 function filterFilms() {
-  //adding event listener to input
+  
   var filterInput = document.getElementById("filter");
   filterInput.addEventListener("keyup", filter);
 
-  //defining filter function
   function filter() {
-    //defining input value and elements
-    var filterValue = filterInput.value.toLowerCase();
 
+    var filterValue = filterInput.value.toLowerCase();
     var filmsDiv = document.getElementById("films");
     var filmDivs = document.querySelectorAll("div.film");
-
-    // removing elements that don't mach the search
 
     filmDivs.forEach(function(element) {
       var filmName = element.querySelector("h3");
@@ -126,7 +118,7 @@ function filterFilms() {
 createFilms(myFilms);
 filterFilms();
 
-//BONUS
+// FUNCTION FOR DELETING FILMS.
 
 function deleteFilm() {
   
