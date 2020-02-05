@@ -45,7 +45,7 @@ var myFilms = [
   },
   {
     name: "Interstellar",
-    imgSrc: "img/Interstellar.jpg"
+    imgSrc: "img/interstellar.jpg"
   },
   {
     name: "Memento",
